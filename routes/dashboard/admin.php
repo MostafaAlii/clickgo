@@ -21,7 +21,6 @@ Route::group(
         Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::get('dashboard', Dashboard\DashboardController::class)->name('dashboard');
             Route::resource('admins', Dashboard\AdminController::class);
-            Route::resource('category', Dashboard\CategoryController::class);
         });
         require __DIR__.'../../auth.php';
 });

@@ -20,14 +20,6 @@
     </a>
 </div>
 <div class="menu-item">
-    <a class="menu-link @if(Route::currentRouteName() === 'admin.category.index') active @endif" href="{{ route('admin.category.index') }}">
-        <span class="menu-icon">
-            <i class="bi bi-window fs-3"></i>
-        </span>
-        <span class="menu-title">{{ trans('dashboard/category.categories') }}</span>
-    </a>
-</div>
-<div class="menu-item">
     <a class="menu-link" href="../../demo13/dist/landing.html">
         <span class="menu-icon">
             <i class="bi bi-app-indicator fs-3"></i>
