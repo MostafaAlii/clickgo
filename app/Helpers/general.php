@@ -54,3 +54,19 @@ if (!function_exists('loadDashboardRoutes')) {
     }
 }
 
+if (! function_exists('is_active')) {
+    function is_active($routes): string {
+        if (is_array($routes)) {
+            foreach ($routes as $route) {
+                if (request()->routeIs($route)) {
+                    return 'active';
+                }
+            }
+        } else {
+            if (request()->routeIs($routes)) {
+                return 'active';
+            }
+        }
+        return '';
+    }
+}

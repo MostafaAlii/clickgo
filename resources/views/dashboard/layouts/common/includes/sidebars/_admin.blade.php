@@ -19,7 +19,129 @@
         <span class="menu-title">{{ trans('dashboard/admin.admins') }}</span>
     </a>
 </div>
-<div class="menu-item">
+<!-- Start Main Settings -->
+<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+    <span class="menu-link">
+        <span class="menu-icon">
+            <i class="bi bi-archive fs-3"></i>
+        </span>
+        <span class="menu-title">الاعدادات العامه</span>
+        <span class="menu-arrow"></span>
+    </span>
+    <div class="menu-sub menu-sub-accordion menu-active-bg">
+        <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.professions.*') }}">
+            <span class="menu-link">
+                <span class="menu-bullet">
+                    <span class="bullet bullet-dot"></span>
+                </span>
+                <span class="menu-title">المهن</span>
+                <span class="menu-arrow"></span>
+            </span>
+            <div class="menu-sub menu-sub-accordion {{ is_active('admin.professions.*') }}">
+                <div class="menu-item">
+                    <a class="menu-link {{ is_active('admin.professions.index') }}" href="{{route('admin.professions.index')}}">
+                        <span class="menu-bullet">
+                            <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">المهن</span>
+                    </a>
+                </div>
+            </div>
+            <div class="menu-sub menu-sub-accordion {{ is_active('admin.documents.*') }}">
+                <div class="menu-item">
+                    <a class="menu-link {{ is_active('admin.documents.index') }}" href="{{route('admin.documents.index')}}">
+                        <span class="menu-bullet">
+                            <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">المستندات</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Main Settings -->
+<!-- Start Country -->
+<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.country.*') }}">
+    <span class="menu-link {{ is_active('admin.country.*') }}">
+        <span class="menu-icon"><i class="bi bi-list fs-2"></i></span>
+        <span class="menu-title">{{ trans('dashboard/country.countries') }}</span>
+        <span class="menu-arrow"></span>
+    </span>
+    <div class="menu-sub menu-sub-accordion menu-active-bg">
+        <div class="menu-item">
+            <a class="menu-link {{ is_active('admin.country.index') }}" href="{{ route('admin.country.index') }}">
+                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                <span class="menu-title">{{ trans('dashboard/country.countries') }}</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- End Country -->
+<!-- Categories Menu -->
+    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.categories.*') }}">
+        <span class="menu-link {{ is_active('admin.categories.*') }}">
+            <span class="menu-icon"><i class="bi bi-list fs-2"></i></span>
+            <span class="menu-title">التصنيفات</span>
+            <span class="menu-arrow"></span>
+        </span>
+        <div class="menu-sub menu-sub-accordion menu-active-bg">
+            <div class="menu-item">
+                <a class="menu-link {{ is_active('admin.categories.index') }}"
+                    href="{{ route('admin.categories.index') }}">
+                    <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                    <span class="menu-title">التصنيفات</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a class="menu-link {{ is_active('admin.categories.create') }}"
+                    href="{{ route('admin.categories.create') }}">
+                    <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                    <span class="menu-title">إضافة تصنيف</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Categories Menu -->
+    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.services.*') }}">
+        <span class="menu-link {{ is_active('admin.services.*') }}">
+            <span class="menu-icon"><i class="bi bi-list fs-2"></i></span>
+            <span class="menu-title">الخدمات</span>
+            <span class="menu-arrow"></span>
+        </span>
+        <div class="menu-sub menu-sub-accordion menu-active-bg">
+            <div class="menu-item">
+                <a class="menu-link {{ is_active('admin.services.index') }}"
+                    href="{{ route('admin.services.index') }}">
+                    <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                    <span class="menu-title">الخدمات</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a class="menu-link {{ is_active('admin.services.create') }}"
+                    href="{{ route('admin.services.create') }}">
+                    <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                    <span class="menu-title">إضافة خدمه / مقدم خدمه</span>
+                </a>
+            </div>
+        </div>
+    </div>
+<div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ is_active('admin.providers.*') }}">
+    <span class="menu-link {{ is_active('admin.providers.*') }}">
+        <span class="menu-icon"><i class="bi bi-list fs-2"></i></span>
+        <span class="menu-title">مزودى الخدمه</span>
+        <span class="menu-arrow"></span>
+    </span>
+    <div class="menu-sub menu-sub-accordion menu-active-bg">
+        <div class="menu-item">
+            <a class="menu-link {{ is_active('admin.providers.index') }}" href="{{ route('admin.providers.index') }}">
+                <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+                <span class="menu-title">مزودى الخدمه</span>
+            </a>
+        </div>
+    </div>
+</div>
+{{--<div class="menu-item">
     <a class="menu-link" href="../../demo13/dist/landing.html">
         <span class="menu-icon">
             <i class="bi bi-app-indicator fs-3"></i>
@@ -1445,4 +1567,4 @@
         </span>
         <span class="menu-title">Changelog v8.0.26</span>
     </a>
-</div>
+</div>--}}
